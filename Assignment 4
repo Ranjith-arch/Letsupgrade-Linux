@@ -1,0 +1,94 @@
+#Question 2
+
+clear
+echo "Enter a number"
+read n
+sd=0
+rev=0
+
+while [ $n -gt 0 ]
+do
+    sd=$(( $n % 10 ))
+    rev=$(( $rev *\ 10 + $sd ))
+    n=$(( $n / 10 ))
+done
+
+echo "Reverse number of entered digit is $rev"
+
+
+#Question 0
+
+This bash code in file called a.sh
+
+#!/bin/bash
+today=`date '+%Y_%m_%d__%H_%M_%S'`;
+filename="/home/el/myfile/$today.ponies"
+echo $filename;
+When run, prints:
+
+eric@dev ~ $ chmod +x a.sh
+
+eric@dev ~ $ ./a.sh
+/home/el/myfile/2014_08_11__15_55_25
+
+
+#Question 1
+
+today=$( date +%Y%m%d )   # or: printf -v today '%(%Y%m%d)T' -1
+number=0
+
+fname=$today.txt
+
+while [ -e "$fname" ]; do
+    printf -v fname '%s-%02d.txt' "$today" "$(( ++number ))"
+done
+
+printf 'Will use "%s" as filename\n' "$fname"
+touch "$fname"
+
+
+#Question 1
+
+public static void main(String[] args) {
+
+    Scanner in = new Scanner(System.in);
+    System.out.print("Please enter a given  password : ");
+    String passwordhere = in.nextLine();
+    System.out.print("Please re-enter the password to confirm : ");
+    String confirmhere = in.nextLine();
+    System.out.println("your password is: " + passwordhere);
+
+    while (!passwordhere.equals(confirmhere) || !isValid(passwordhere)) {
+        System.out.println("The password entered here  is invalid");
+        System.out.print("Please enter the password again.it must be valid : ");
+        String Passwordhere = in.nextLine();
+        System.out.print("Please re-enter the password to confirm : ");
+
+    }
+}
+
+public static boolean isValid(String passwordhere) {
+
+    if (passwordhere.length() < 8) {
+        return false;
+    } else {
+
+        for (int p = 0; p < passwordhere.length(); p++) {
+            if (Character.isUpperCase(passwordhere.charAt(p))) {
+            }
+        }
+        for (int q = 0; q < passwordhere.length(); q++) {
+            if (Character.isLowerCase(passwordhere.charAt(q))) {
+            }
+        }
+        for (int r = 0; r < passwordhere.length(); r++) {
+            if (Character.isDigit(passwordhere.charAt(r))) {
+            }
+        }
+        for (int s = 0; s < passwordhere.length(); s++) {
+            if (Character.isSpecialCharacter(passwordhere.charAt(s))) {
+            } 
+            }
+            return true;
+        }
+}
